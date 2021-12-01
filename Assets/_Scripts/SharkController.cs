@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SharkController : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class SharkController : MonoBehaviour
     private Animator anim;
 
     private SpriteRenderer sr;
+
+    public Text scoreLabel;
+    private int scoreValue;
 
     private void Awake()
     {
@@ -67,6 +71,15 @@ public class SharkController : MonoBehaviour
         if (x > 0)
         {
             sr.flipX = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Edible"))
+        {
+            scoreValue += 100;
+            this.scoreLabel.text = "Score: " + this.scoreValue;
         }
     }
 

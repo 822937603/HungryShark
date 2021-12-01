@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EdibleTanFishController : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class EdibleTanFishController : MonoBehaviour
     public FishSpeed speed;
     public Boundary boundary;
     public float currentSpeed;
+
+    public Text scoreLabel;
+    private int scoreValue;
 
     // Start is called before the first frame update
     void Start()
@@ -54,7 +58,7 @@ public class EdibleTanFishController : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            Destroy(this.gameObject);
         }
     }
 

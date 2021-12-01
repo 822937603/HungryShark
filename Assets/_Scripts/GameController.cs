@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     public int edibleYellowFishCount;
     public GameObject edibleYellowFish;
     public float spawnRate = 20.0f;
+    public Text scoreLabel;
 
     // Start is called before the first frame update
     void Start()
@@ -24,4 +26,5 @@ public class GameController : MonoBehaviour
     { 
             Instantiate(edibleYellowFish);
     }
+
 }
